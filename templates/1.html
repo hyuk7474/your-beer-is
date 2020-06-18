@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h2>Select Beer</h2>
+    <select class="form-control">
+        <option>Default select</option>
+    </select>
+    <div class="setuprow">
+        <label>Style:</label>
+        <div class="recipeSetupSelect ui search dropdown selection active visible"><select name="maincategory"
+                id="maincategory" onkeyup="updatesubcategory(this.selectedIndex);"
+                onchange="updatesubcategory(this.selectedIndex);" class="">
+                <option value="--">--</option>
+                <option value="Standard American Beer">1. Standard American Beer</option>
+                <option value="International Lager">2. International Lager</option>
+                <option value="Czech Lager">3. Czech Lager</option>
+                <option value="Pale Malty European Lager">4. Pale Malty European Lager</option>
+                <option value="Pale Bitter European Beer">5. Pale Bitter European Beer</option>
+                <option value="Amber Malty European Lager">6. Amber Malty European Lager</option>
+                <option value="Amber Bitter European Lager">7. Amber Bitter European Lager</option>
+                <option value="Dark European Lager">8. Dark European Lager</option>
+                <option value="Strong European Beer">9. Strong European Beer</option>
+                <option value="German Wheat Beer">10. German Wheat Beer</option>
+                <option value="British Bitter">11. British Bitter</option>
+                <option value="Pale Commonwealth Beer">12. Pale Commonwealth Beer</option>
+                <option value="Brown British Beer">13. Brown British Beer</option>
+                <option value="Scottish Ale">14. Scottish Ale</option>
+                <option value="Irish Beer">15. Irish Beer</option>
+                <option value="Dark British Beer">16. Dark British Beer</option>
+                <option value="Strong British Ale">17. Strong British Ale</option>
+                <option value="Pale American Ale">18. Pale American Ale</option>
+                <option value="Amber and Brown American Beer">19. Amber and Brown American Beer</option>
+                <option value="American Porter and Stout">20. American Porter and Stout</option>
+                <option value="IPA">21. IPA</option>
+                <option value="Strong American Ale">22. Strong American Ale</option>
+                <option value="European Sour Ale">23. European Sour Ale</option>
+                <option value="Belgian Ale">24. Belgian Ale</option>
+                <option value="Strong Belgian Ale">25. Strong Belgian Ale</option>
+                <option value="Trappist Ale">26. Trappist Ale</option>
+                <option value="Historical Beer">27. Historical Beer</option>
+                <option value="American Wild Ale">28. American Wild Ale</option>
+                <option value="Fruit Beer">29. Fruit Beer</option>
+                <option value="Spiced Beer">30. Spiced Beer</option>
+                <option value="Alternative Fermentables Beer">31. Alternative Fermentables Beer</option>
+                <option value="Smoked Beer">32. Smoked Beer</option>
+                <option value="Wood Beer">33. Wood Beer</option>
+                <option value="Specialty Beer">34. Specialty Beer</option>
+                <option value="PRE-2015 STYLES -------------------">PRE-2015 STYLES -------------------</option>
+                <option value="Amber Hybrid Beer">7. Amber Hybrid Beer</option>
+                <option value="American Ale">10. American Ale</option>
+                <option value="Belgian and French Ale">16. Belgian and French Ale</option>
+                <option value="Belgian Strong Ale">18. Belgian Strong Ale</option>
+                <option value="English Brown Ale">11. English Brown Ale</option>
+                <option value="English Pale Ale">8. English Pale Ale</option>
+                <option value="India Pale Ale (IPA)">14. India Pale Ale (IPA)</option>
+                <option value="German Wheat and Rye Beer">15. German Wheat and Rye Beer</option>
+                <option value="Light Hybrid Beer">6. Light Hybrid Beer</option>
+                <option value="Porter">12. Porter</option>
+                <option value="Scottish and Irish Ale">9. Scottish and Irish Ale</option>
+                <option value="Smoke Flavored/Wood-Aged Beer">22. Smoke Flavored/Wood-Aged Beer</option>
+                <option value="Sour Ale">4. Sour Ale</option>
+                <option value="Stout">13. Stout</option>
+                <option value="Strong Ale">19. Strong Ale</option>
+                <option value="Bock">5. Bock</option>
+                <option value="Dark Lager">4. Dark Lager</option>
+                <option value="European Amber Lager">3. European Amber Lager</option>
+                <option value="Light Lager">1. Light Lager</option>
+                <option value="Pilsner">5. Pilsner</option>
+                <option value="Cider or Perry">28. Cider or Perry</option>
+                <option value="Mead">26. Mead</option>
+                <option value="Spice/Herb/Vegetable Beer">21. Spice/Herb/Vegetable Beer</option>
+                <option value="NO PROFILE SELECTED ------">NO PROFILE SELECTED ------</option>
+            </select><i class="dropdown icon"></i><i class="remove icon"></i><input class="search" autocomplete="off"
+                tabindex="0" type="text">
+            <div class="text">--</div>
+            <div class="menu visible transition" tabindex="-1" style="display: block !important;">
+                <div class="item active selected" data-value="--" data-text="--">--</div>
+                <div class="item" data-value="Standard American Beer" data-text="1. Standard American Beer">1. Standard
+                    American Beer</div>
+                <div class="item" data-value="International Lager" data-text="2. International Lager">2. International
+                    Lager</div>
+                <div class="item" data-value="Czech Lager" data-text="3. Czech Lager">3. Czech Lager</div>
+                <div class="item" data-value="Pale Malty European Lager" data-text="4. Pale Malty European Lager">4.
+                    Pale Malty European Lager</div>
+                <div class="item" data-value="Pale Bitter European Beer" data-text="5. Pale Bitter European Beer">5.
+                    Pale Bitter European Beer</div>
+                <div class="item" data-value="Amber Malty European Lager" data-text="6. Amber Malty European Lager">6.
+                    Amber Malty European Lager</div>
+                <div class="item" data-value="Amber Bitter European Lager" data-text="7. Amber Bitter European Lager">7.
+                    Amber Bitter European Lager</div>
+                <div class="item" data-value="Dark European Lager" data-text="8. Dark European Lager">8. Dark European
+                    Lager</div>
+                <div class="item" data-value="Strong European Beer" data-text="9. Strong European Beer">9. Strong
+                    European Beer</div>
+                <div class="item" data-value="German Wheat Beer" data-text="10. German Wheat Beer">10. German Wheat Beer
+                </div>
+                <div class="item" data-value="British Bitter" data-text="11. British Bitter">11. British Bitter</div>
+                <div class="item" data-value="Pale Commonwealth Beer" data-text="12. Pale Commonwealth Beer">12. Pale
+                    Commonwealth Beer</div>
+                <div class="item" data-value="Brown British Beer" data-text="13. Brown British Beer">13. Brown British
+                    Beer</div>
+                <div class="item" data-value="Scottish Ale" data-text="14. Scottish Ale">14. Scottish Ale</div>
+                <div class="item" data-value="Irish Beer" data-text="15. Irish Beer">15. Irish Beer</div>
+                <div class="item" data-value="Dark British Beer" data-text="16. Dark British Beer">16. Dark British Beer
+                </div>
+                <div class="item" data-value="Strong British Ale" data-text="17. Strong British Ale">17. Strong British
+                    Ale</div>
+                <div class="item" data-value="Pale American Ale" data-text="18. Pale American Ale">18. Pale American Ale
+                </div>
+                <div class="item" data-value="Amber and Brown American Beer"
+                    data-text="19. Amber and Brown American Beer">19. Amber and Brown American Beer</div>
+                <div class="item" data-value="American Porter and Stout" data-text="20. American Porter and Stout">20.
+                    American Porter and Stout</div>
+                <div class="item" data-value="IPA" data-text="21. IPA">21. IPA</div>
+                <div class="item" data-value="Strong American Ale" data-text="22. Strong American Ale">22. Strong
+                    American Ale</div>
+                <div class="item" data-value="European Sour Ale" data-text="23. European Sour Ale">23. European Sour Ale
+                </div>
+                <div class="item" data-value="Belgian Ale" data-text="24. Belgian Ale">24. Belgian Ale</div>
+                <div class="item" data-value="Strong Belgian Ale" data-text="25. Strong Belgian Ale">25. Strong Belgian
+                    Ale</div>
+                <div class="item" data-value="Trappist Ale" data-text="26. Trappist Ale">26. Trappist Ale</div>
+                <div class="item" data-value="Historical Beer" data-text="27. Historical Beer">27. Historical Beer</div>
+                <div class="item" data-value="American Wild Ale" data-text="28. American Wild Ale">28. American Wild Ale
+                </div>
+                <div class="item" data-value="Fruit Beer" data-text="29. Fruit Beer">29. Fruit Beer</div>
+                <div class="item" data-value="Spiced Beer" data-text="30. Spiced Beer">30. Spiced Beer</div>
+                <div class="item" data-value="Alternative Fermentables Beer"
+                    data-text="31. Alternative Fermentables Beer">31. Alternative Fermentables Beer</div>
+                <div class="item" data-value="Smoked Beer" data-text="32. Smoked Beer">32. Smoked Beer</div>
+                <div class="item" data-value="Wood Beer" data-text="33. Wood Beer">33. Wood Beer</div>
+                <div class="item" data-value="Specialty Beer" data-text="34. Specialty Beer">34. Specialty Beer</div>
+                <div class="item" data-value="PRE-2015 STYLES -------------------"
+                    data-text="PRE-2015 STYLES -------------------">PRE-2015 STYLES -------------------</div>
+                <div class="item" data-value="Amber Hybrid Beer" data-text="7. Amber Hybrid Beer">7. Amber Hybrid Beer
+                </div>
+                <div class="item" data-value="American Ale" data-text="10. American Ale">10. American Ale</div>
+                <div class="item" data-value="Belgian and French Ale" data-text="16. Belgian and French Ale">16. Belgian
+                    and French Ale</div>
+                <div class="item" data-value="Belgian Strong Ale" data-text="18. Belgian Strong Ale">18. Belgian Strong
+                    Ale</div>
+                <div class="item" data-value="English Brown Ale" data-text="11. English Brown Ale">11. English Brown Ale
+                </div>
+                <div class="item" data-value="English Pale Ale" data-text="8. English Pale Ale">8. English Pale Ale
+                </div>
+                <div class="item" data-value="India Pale Ale (IPA)" data-text="14. India Pale Ale (IPA)">14. India Pale
+                    Ale (IPA)</div>
+                <div class="item" data-value="German Wheat and Rye Beer" data-text="15. German Wheat and Rye Beer">15.
+                    German Wheat and Rye Beer</div>
+                <div class="item" data-value="Light Hybrid Beer" data-text="6. Light Hybrid Beer">6. Light Hybrid Beer
+                </div>
+                <div class="item" data-value="Porter" data-text="12. Porter">12. Porter</div>
+                <div class="item" data-value="Scottish and Irish Ale" data-text="9. Scottish and Irish Ale">9. Scottish
+                    and Irish Ale</div>
+                <div class="item" data-value="Smoke Flavored/Wood-Aged Beer"
+                    data-text="22. Smoke Flavored/Wood-Aged Beer">22. Smoke Flavored/Wood-Aged Beer</div>
+                <div class="item" data-value="Sour Ale" data-text="4. Sour Ale">4. Sour Ale</div>
+                <div class="item" data-value="Stout" data-text="13. Stout">13. Stout</div>
+                <div class="item" data-value="Strong Ale" data-text="19. Strong Ale">19. Strong Ale</div>
+                <div class="item" data-value="Bock" data-text="5. Bock">5. Bock</div>
+                <div class="item" data-value="Dark Lager" data-text="4. Dark Lager">4. Dark Lager</div>
+                <div class="item" data-value="European Amber Lager" data-text="3. European Amber Lager">3. European
+                    Amber Lager</div>
+                <div class="item" data-value="Light Lager" data-text="1. Light Lager">1. Light Lager</div>
+                <div class="item" data-value="Pilsner" data-text="5. Pilsner">5. Pilsner</div>
+                <div class="item" data-value="Cider or Perry" data-text="28. Cider or Perry">28. Cider or Perry</div>
+                <div class="item" data-value="Mead" data-text="26. Mead">26. Mead</div>
+                <div class="item" data-value="Spice/Herb/Vegetable Beer" data-text="21. Spice/Herb/Vegetable Beer">21.
+                    Spice/Herb/Vegetable Beer</div>
+                <div class="item" data-value="NO PROFILE SELECTED ------" data-text="NO PROFILE SELECTED ------">NO
+                    PROFILE SELECTED ------</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
