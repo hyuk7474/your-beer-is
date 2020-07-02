@@ -4,21 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>결과값</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+    <title>프론트-백엔드 연결 마지막 예제!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -50,23 +36,23 @@
             show_star();
         });
 
-        function show_star() {
+        function show_bf_datas() {
             $.ajax({
                 type: 'GET',
                 url: '/api/list',
                 data: {},
                 success: function (response) {
                     if (response['result'] == 'success') {
-                        // let stars = response['stars_list'];
+                        let bf_datas = response['bf_list'];
 
-                        for (let i = 0; i < stars.length; i++) {
-                            let star = stars[i];
+                        for (let i = 0; i < bf_datas.length; i++) {
+                            let bf_data = bf_datas[i];
 
-                            let name = star['name'];
-                            let url = star['url'];
-                            let img_url = star['img_url'];
-                            let recent = star['recent'];
-                            let like = star['like'];
+                            let name = bf_data['name'];
+                            let ABV = bf_data['ABV'];
+                            let IBU = bf_data['IBU'];
+                            let info = bf_data['info'];
+                            
 
                             let temp_html = `
                                 <div class="card">
@@ -82,10 +68,7 @@
                                             </div>
                                             <div class="media-content">
                                                 <a href="${url}" target="_blank" class="star-name title is-4">${name} (좋아요: ${like})</a>
-                                                <p class="subtitle is-6">${style}}</p>
-                                                <p class="subtitle is-6">${ABV}</p>
-                                                <p class="subtitle is-6">${IBU}</p>
-                                                <p class="subtitle is-6">${chracter}</p>
+                                                <p class="subtitle is-6">${recent}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -95,7 +78,13 @@
                                               <span class="icon">
                                                 <i class="fas fa-thumbs-up"></i>
                                             </span>
-                                        </a>                                        
+                                        </a>
+                                        <a href="#" onclick="delete_star('${name}')" class="card-footer-item has-text-danger">
+                                            삭제
+                                             <span class="icon">
+                                                <i class="fas fa-ban"></i>
+                                            </span>
+                                        </a>
                                     </footer>
                                 </div>`
                             $('#star-box').append(temp_html);
@@ -106,21 +95,34 @@
             });
         }
 
-        // function like_star(name) {
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: '/api/like',
-        //         data: { 'name_give': name },
-        //         success: function (response) {
-        //             if (response['result'] == 'success') {
-        //                 alert('좋아요 완료!');
-        //                 window.location.reload();
-        //             }
-        //         }
-        //     });
-        // }
+        function like_star(name) {
+            $.ajax({
+                type: 'POST',
+                url: '/api/like',
+                data: {'name_give': name},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        alert('좋아요 완료!');
+                        window.location.reload();
+                    }
+                }
+            });
+        }
 
-        
+        function delete_star(name) {
+            $.ajax({
+                type: 'POST',
+                url: '/api/delete',
+                data: {'name_give': name},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        alert('삭제 완료!');
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+
     </script>
 </head>
 
@@ -129,10 +131,10 @@
         <div class="hero-body">
             <div class="container make-center">
                 <h1 class="title">
-                    추천 맥주😆
+                    마이 페이보릿 무비스타😆
                 </h1>
                 <h2 class="subtitle">
-                    나만의 맥주를 찾아봅시다!
+                    순위를 매겨봅시다
                 </h2>
             </div>
         </div>
