@@ -70,9 +70,9 @@ for i in range(1, 32):
             'history': history
         }
         
-        db.bjcp.insert_one(document)
+        # db.bjcp.insert_one(document)
 
-
+        print(title)
         # print(title, IBU, ABV, aroma, flavor, info, history)
 
     time.sleep(0.3)  # 0.3초 대기(차단당하지 않도록)
