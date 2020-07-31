@@ -6,7 +6,7 @@ app = Flask(__name__)
 client = MongoClient('localhost', 27017)
 
 db = client["your_beer_is"]
-bf_data = db["brewersfriend"]
+bf_data = db["bf_data"]
 
 @app.route('/')
 def home():
